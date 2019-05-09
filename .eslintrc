@@ -12,7 +12,7 @@
   ],
   "extends": "airbnb",
   "rules": {
-    "indent":["off","tab"],
+    "indent":["on","tab"],
     "semi": ["error", "never"],
     "jsx-a11y/anchor-is-valid": ["error", {
       "components": [],
