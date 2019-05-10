@@ -7,7 +7,7 @@ class Money extends Component {
   render() {
     return (
       <div>
-        {/* <h1>Money</h1> */}
+        <h1>Money</h1>
         <TabBar page="MoneyTab" />
       </div>
     )

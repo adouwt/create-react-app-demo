@@ -7,7 +7,7 @@ class My extends Component {
   render() {
     return (
       <div>
-        {/* <h1>my</h1> */}
+        <h1>my</h1>
         <TabBar page="MyTab" />
       </div>
     )

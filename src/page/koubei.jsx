@@ -7,7 +7,7 @@ class Koubei extends Component {
   render() {
     return (
       <div>
-        {/* <h1>koubei</h1> */}
+        <h1>koubei</h1>
         <TabBar page="KoubeiTab" />
       </div>
     )

@@ -3,15 +3,15 @@ import { observer } from 'mobx-react'
 import TabBar from '../component/tabBar/tabBar'
 
 @observer
-class Money extends Component {
+class Friend extends Component {
   render() {
     return (
       <div>
-        {/* <h1>friend</h1> */}
+        <h3>this is a Friend tab</h3>
         <TabBar page="FriendTab" />
       </div>
     )
   }
 }
 
-export default Money
+export default Friend

@@ -1,12 +1,14 @@
 /*eslint-disable*/
 import React, { Component } from 'react'
-import { TabBar } from 'antd-mobile';
-
+import { TabBar } from 'antd-mobile'
+import { Link } from 'react-router-dom'
+import './tabBar.css'
 class TabBarComp extends Component {
   constructor(props) {
     super(props);
     this.state = {
       selectedTab: props.page,
+      snippet: props.snippet,
       hidden: false,
       fullScreen: false,
     };
@@ -26,7 +28,7 @@ class TabBarComp extends Component {
         >
           Click to show/hide tab-bar
         </a>
-        <a style={{ display: 'block', marginBottom: 600, color: '#108ee9' }}
+        <a style={{ display: 'block', marginBottom: 50, color: '#108ee9' }}
           onClick={(e) => {
             e.preventDefault();
             this.setState({
@@ -42,7 +44,7 @@ class TabBarComp extends Component {
 
   render() {
     return (
-      <div style={this.state.fullScreen ? { position: 'fixed', height: '100%', width: '100%', top: 0 } : { height: '100vh' }}>
+      <div className="tab-bar">
         <TabBar
           unselectedTintColor="#949494"
           tintColor="#33A3F4"
@@ -53,17 +55,21 @@ class TabBarComp extends Component {
           <TabBar.Item
             title="Life"
             key="Life"
-            icon={<div style={{
-              width: '22px',
-              height: '22px',
-              background: 'url(https://zos.alipayobjects.com/rmsportal/sifuoDUQdAFKAVcFGROC.svg) center center /  21px 21px no-repeat' }}
-            />
+            icon={
+              <Link to='/index'>
+                <div style={{
+                  width: '22px',
+                  height: '22px',
+                  background: 'url(https://zos.alipayobjects.com/rmsportal/sifuoDUQdAFKAVcFGROC.svg) center center /  21px 21px no-repeat' }}
+                />
+              </Link>
             }
-            selectedIcon={<div style={{
-              width: '22px',
-              height: '22px',
-              background: 'url(https://zos.alipayobjects.com/rmsportal/iSrlOTqrKddqbOmlvUfq.svg) center center /  21px 21px no-repeat' }}
-            />
+            selectedIcon={
+              <div style={{
+                width: '22px',
+                height: '22px',
+                background: 'url(https://zos.alipayobjects.com/rmsportal/iSrlOTqrKddqbOmlvUfq.svg) center center /  21px 21px no-repeat' }}
+              />
             }
             selected={this.state.selectedTab === 'indexTab'}
             badge={1}
@@ -74,22 +80,26 @@ class TabBarComp extends Component {
             }}
             data-seed="logId"
           >
-            {this.renderContent('Life')}
+            {/* {this.renderContent('Life')} */}
           </TabBar.Item>
           <TabBar.Item
             title="Money"
             key="Money"
-            icon={<div style={{
-              width: '22px',
-              height: '22px',
-              background: 'url(https://zos.alipayobjects.com/rmsportal/sifuoDUQdAFKAVcFGROC.svg) center center /  21px 21px no-repeat' }}
-            />
+            icon={
+              <Link to='/money'>
+                <div style={{
+                  width: '22px',
+                  height: '22px',
+                  background: 'url(https://zos.alipayobjects.com/rmsportal/asJMfBrNqpMMlVpeInPQ.svg) center center /  21px 21px no-repeat' }}
+                />
+              </Link>
             }
-            selectedIcon={<div style={{
-              width: '22px',
-              height: '22px',
-              background: 'url(https://zos.alipayobjects.com/rmsportal/iSrlOTqrKddqbOmlvUfq.svg) center center /  21px 21px no-repeat' }}
-            />
+            selectedIcon={
+              <div style={{
+                width: '22px',
+                height: '22px',
+                background: 'url(https://zos.alipayobjects.com/rmsportal/gjpzzcrPMkhfEqgbYvmN.svg) center center /  21px 21px no-repeat' }}
+              />
             }
             selected={this.state.selectedTab === 'MoneyTab'}
             badge={1}
@@ -100,15 +110,17 @@ class TabBarComp extends Component {
             }}
             data-seed="logId"
           >
-            {this.renderContent('Life')}
+            {/* {this.renderContent('Life')} */}
           </TabBar.Item>
           <TabBar.Item
             icon={
-              <div style={{
-                width: '22px',
-                height: '22px',
-                background: 'url(https://gw.alipayobjects.com/zos/rmsportal/BTSsmHkPsQSPTktcXyTV.svg) center center /  21px 21px no-repeat' }}
-              />
+              <Link to='/koubei'>
+                <div style={{
+                  width: '22px',
+                  height: '22px',
+                  background: 'url(https://gw.alipayobjects.com/zos/rmsportal/BTSsmHkPsQSPTktcXyTV.svg) center center /  21px 21px no-repeat' }}
+                />
+              </Link>
             }
             selectedIcon={
               <div style={{
@@ -128,15 +140,17 @@ class TabBarComp extends Component {
             }}
             data-seed="logId1"
           >
-            {this.renderContent('Koubei')}
+            {/* {this.renderContent('Koubei')} */}
           </TabBar.Item>
           <TabBar.Item
             icon={
-              <div style={{
-                width: '22px',
-                height: '22px',
-                background: 'url(https://zos.alipayobjects.com/rmsportal/psUFoAMjkCcjqtUCNPxB.svg) center center /  21px 21px no-repeat' }}
-              />
+              <Link to='/friend'>
+                <div style={{
+                  width: '22px',
+                  height: '22px',
+                  background: 'url(https://zos.alipayobjects.com/rmsportal/psUFoAMjkCcjqtUCNPxB.svg) center center /  21px 21px no-repeat' }}
+                />
+              </Link>
             }
             selectedIcon={
               <div style={{
@@ -155,10 +169,17 @@ class TabBarComp extends Component {
               });
             }}
           >
-            {this.renderContent('Friend')}
           </TabBar.Item>
           <TabBar.Item
-            icon={{ uri: 'https://zos.alipayobjects.com/rmsportal/asJMfBrNqpMMlVpeInPQ.svg' }}
+            icon={
+              <Link to='/friend'>
+                <div style={{
+                  width: '22px',
+                  height: '22px',
+                  background: 'url(https://zos.alipayobjects.com/rmsportal/asJMfBrNqpMMlVpeInPQ.svg) center center /  21px 21px no-repeat' }}
+                />
+              </Link>
+            }
             selectedIcon={{ uri: 'https://zos.alipayobjects.com/rmsportal/gjpzzcrPMkhfEqgbYvmN.svg' }}
             title="My"
             key="my"
@@ -169,7 +190,7 @@ class TabBarComp extends Component {
               });
             }}
           >
-            {this.renderContent('My')}
+            {/* {this.renderContent('My')} */}
           </TabBar.Item>
         </TabBar>
       </div>

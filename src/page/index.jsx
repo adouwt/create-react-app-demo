@@ -8,6 +8,7 @@ class Index extends Component {
   render() {
     return (
       <div className="list-wrapper">
+        <h3>this is a index tab</h3>
         <TabBar page="indexTab" />
       </div>
     )
