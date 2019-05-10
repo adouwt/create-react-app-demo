@@ -34,7 +34,7 @@ request.interceptors.response.use(
      */
     // console.log(response, '拦截器 response') // // response 响应数据
     const res = response.data
-    console.log(res) // 在这里已经对返回的参数 做了判断，如果是失败的信息，就弹框提示失败的信息
+    // console.log(res) // 在这里已经对返回的参数 做了判断，如果是失败的信息，就弹框提示失败的信息
     // if (res.code !== 20000) {
     if (!res.success) {
       // 这里可以统一提示错误信息

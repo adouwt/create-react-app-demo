@@ -50,7 +50,6 @@ class TabBarComp extends Component {
           tintColor="#33A3F4"
           barTintColor="white"
           hidden={this.state.hidden}
-          tabBarPosition="bottom"
         >
           <TabBar.Item
             title="Life"
