@@ -4,7 +4,7 @@ import { observer } from 'mobx-react'
 import TabBar from '../component/tabBar/tabBar'
 import SearchBar from '../component/search/search'
 import http from '../plugin/http'
-
+import Tab from '../component/tab/tab'
 import '../styles/index.scss'
 @observer
 class Index extends Component {
@@ -24,7 +24,6 @@ class Index extends Component {
   }
   componentDidMount () {
     this.getNewList().then((res) => {
-      console.log(res)
       this.setState({
         ajaxData: res.users
       })
@@ -32,6 +31,27 @@ class Index extends Component {
     })
   }
   render() {
+    // mock
+    let tabData = [
+      {url: 'http://www.imeitou.com/uploads/allimg/2018041608/jwzx4afoxf5.jpg', name: '美国队长'},
+      {url: 'http://www.imeitou.com/uploads/allimg/2018041608/jwzx4afoxf5.jpg', name: '雷神'},
+      {url: 'http://www.imeitou.com/uploads/allimg/2018041608/jwzx4afoxf5.jpg', name: '钢铁侠'},
+      {url: 'http://www.imeitou.com/uploads/allimg/2018041608/jwzx4afoxf5.jpg', name: '绿巨人'},
+      {url: 'http://www.imeitou.com/uploads/allimg/2018041608/jwzx4afoxf5.jpg', name: '奇异博士'},
+      {url: 'http://www.imeitou.com/uploads/allimg/2018041608/jwzx4afoxf5.jpg', name: '奇异博士'},
+      {url: 'http://www.imeitou.com/uploads/allimg/2018041608/jwzx4afoxf5.jpg', name: '奇异博士'},
+      {url: 'http://www.imeitou.com/uploads/allimg/2018041608/jwzx4afoxf5.jpg', name: '奇异博士'},
+      {url: 'http://www.imeitou.com/uploads/allimg/2018041608/jwzx4afoxf5.jpg', name: '奇异博士'},
+      {url: 'http://www.imeitou.com/uploads/allimg/2018041608/jwzx4afoxf5.jpg', name: '奇异博士'},
+      {url: 'http://www.imeitou.com/uploads/allimg/2018041608/jwzx4afoxf5.jpg', name: '奇异博士'},
+      {url: 'http://www.imeitou.com/uploads/allimg/2018041608/jwzx4afoxf5.jpg', name: '奇异博士'},
+      {url: 'http://www.imeitou.com/uploads/allimg/2018041608/jwzx4afoxf5.jpg', name: '奇异博士'},
+      {url: 'http://www.imeitou.com/uploads/allimg/2018041608/jwzx4afoxf5.jpg', name: '奇异博士'},
+      {url: 'http://www.imeitou.com/uploads/allimg/2018041608/jwzx4afoxf5.jpg', name: '奇异博士'},
+      {url: 'http://www.imeitou.com/uploads/allimg/2018041608/jwzx4afoxf5.jpg', name: '奇异博士'},
+      {url: 'http://www.imeitou.com/uploads/allimg/2018041608/jwzx4afoxf5.jpg', name: '奇异博士'},
+    ]
+
     let usersElements = [];
     let data = this.state.ajaxData;
     for(let i = 0; i< data.length;i++) {
@@ -40,19 +60,27 @@ class Index extends Component {
           <div className="avatar">
             <img src={data[i].avatar_url} alt="" />
           </div>
-          <p className="name">{data[i].name}</p>
+          <p className="name color-white">{data[i].name}</p>
         </div>
       )
     }
+    usersElements = usersElements.slice(0, 4)
+
+
     return (
-      <div className="">
-        <div>
-          <SearchBar />
-          <div className="user-wrapper">
-            {usersElements}
+      <div>
+        <div className="top">
+          <div>
+            <SearchBar />
+            <div className="user-wrapper">
+              {usersElements}
+            </div>
           </div>
+          <TabBar page="indexTab" />
         </div>
-        <TabBar page="indexTab" />
+        <div className="tab-wrapper">
+          <Tab tabStore={tabData}></Tab>
+        </div>
       </div>
     )
   }

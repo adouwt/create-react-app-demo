@@ -4,7 +4,7 @@
     justify-content: flex-start;
     align-items: center;
     flex-wrap: wrap;
-    padding: 15px;
+    padding: 10px;
 }
 .user {
     width: 25%;
@@ -13,4 +13,17 @@
     img {
         width: 100%;
     }
+    .name {
+        margin-top: 10px;
+        margin-bottom: 0;
+    }
+}
+.top {
+   background-color: rgb(26, 130, 209);
+   .am-search {
+        background-color: rgb(26, 130, 209);
+        .am-search-cancel {
+            color: white;
+        }
+   }
 }

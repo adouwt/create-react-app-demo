@@ -22,7 +22,7 @@
     "import/no-unresolved": "off",
     "import/extensions": "off",
     "import/no-extraneous-dependencies": "off",
-    "linebreak-style": ["error","windows"],
+    "linebreak-style": 0,
     "no-mixed-spaces-and-tabs": "off",
     "no-tabs":"off",
     "no-multiple-empty-lines": [0, {"max": 3}]

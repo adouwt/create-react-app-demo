@@ -1,0 +1,16 @@
+.tab-wrapper {
+    margin-bottom: 70px;
+}
+.single-tab {
+    display: inline-block;
+    width: 25%;
+    border-radius: 5px;
+    text-align: center;
+    img {
+        width: 100%;
+    }
+    .name {
+        margin-top: 10px;
+        margin-bottom: 0;
+    }
+}
