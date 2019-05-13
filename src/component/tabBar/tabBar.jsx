@@ -152,11 +152,13 @@ class TabBarComp extends Component {
               </Link>
             }
             selectedIcon={
-              <div style={{
-                width: '22px',
-                height: '22px',
-                background: 'url(https://zos.alipayobjects.com/rmsportal/IIRLrXXrFAhXVdhMWgUI.svg) center center /  21px 21px no-repeat' }}
-              />
+              <Link to='/friend'>
+                <div style={{
+                  width: '22px',
+                  height: '22px',
+                  background: 'url(https://zos.alipayobjects.com/rmsportal/IIRLrXXrFAhXVdhMWgUI.svg) center center /  21px 21px no-repeat' }}
+                />
+              </Link>
             }
             title="Friend"
             key="Friend"
@@ -171,7 +173,7 @@ class TabBarComp extends Component {
           </TabBar.Item>
           <TabBar.Item
             icon={
-              <Link to='/friend'>
+              <Link to='/my'>
                 <div style={{
                   width: '22px',
                   height: '22px',
