@@ -4,14 +4,17 @@ import ReactDOM from 'react-dom'
 import { PullToRefresh, ListView } from 'antd-mobile';
 import http from '../../plugin/http'
 import './pull.scss'
-const genAjaxData = () => {
+const genAjaxData = (page) => {
   return new Promise((resolve, reject) => {
     http({
-      url: '/get/alluser',
-      method: 'get',
-      data: {}
+      url: 'http://localhost:4000/post/getUsersFromPage',
+      method: 'post',
+      data: {
+        page: page
+      }
     }).then(res => {
-      resolve(res.users)
+      console.log(res)
+      resolve(res)
     })
   })
 }
@@ -23,31 +26,39 @@ class pullRefresh extends Component {
       refreshing: false,
       down: false,
       height: document.documentElement.clientHeight,
-      ajaxData: []
+      ajaxData: [],
+      pageSize: 1
     };
     this.refresh = this.refresh.bind(this)
   }
   componentDidMount() {
     const hei = this.state.height - ReactDOM.findDOMNode(this.ptr).offsetTop;
-    genAjaxData().then(res => {
+    genAjaxData(this.state.pageSize).then(res => {
+      console.log(res)
       this.setState({
         height: hei,
-        ajaxData: res
+        ajaxData: res.users,
+        maxSize: res.maxSize
       })
     })
   }
   refresh() {
     this.setState({ refreshing: true });
     setTimeout(() => {
-      genAjaxData().then(res => {
-        this.setState({
-          refreshing: false,
-          ajaxData: res
+      console.log(this.state.pageSize)
+      if(this.state.pageSize <= this.state.maxSize) {
+        genAjaxData(this.state.pageSize).then(res => {
+          this.setState({
+            refreshing: false,
+            ajaxData: res.users,
+            pageSize: this.state.pageSize+1
+          })
         })
-        console.log(this.state.ajaxData)
-      })
+      } else {
+        console.log('不要扯了，到底了')
+      }
     }, 1000);
-    console.log(123)
+    
   }
   componentDidUpdate() {
     
