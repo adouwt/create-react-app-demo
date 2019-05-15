@@ -27,7 +27,8 @@ class pullRefresh extends Component {
       down: false,
       height: document.documentElement.clientHeight,
       ajaxData: [],
-      pageSize: 1
+      pageSize: 1,
+      hasMore: true
     };
     this.refresh = this.refresh.bind(this)
   }
@@ -47,7 +48,7 @@ class pullRefresh extends Component {
     setTimeout(() => {
       console.log(this.state.pageSize)
       if(this.state.pageSize <= this.state.maxSize) {
-        genAjaxData(this.state.pageSize).then(res => {
+        genAjaxData(this.state.pageSize+1).then(res => {
           this.setState({
             refreshing: false,
             ajaxData: res.users,
@@ -56,6 +57,11 @@ class pullRefresh extends Component {
         })
       } else {
         console.log('不要扯了，到底了')
+        this.setState({
+          refreshing: false,
+          hasMore: false,
+          down: true,
+        })
       }
     }, 1000);
     
@@ -86,6 +92,20 @@ class pullRefresh extends Component {
               <p>{j.password}</p>
             </div>
           ))
+        }
+        {
+          <div style={{
+            display: this.state.hasMore ? 'none' : 'block',
+            textAlign: 'center',
+            borderTop: '1px solid #ddd',
+            width: '80%',
+            paddingTop: '15px',
+            marginLeft: 'auto',
+            marginRight: 'auto',
+            marginBottom: '70px'
+          }}>
+          不要扯了，已经到底了！
+          </div>
         }
       </PullToRefresh>
     </div>);
