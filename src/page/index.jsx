@@ -30,27 +30,30 @@ class Index extends Component {
       
     })
   }
+
   render() {
     // mock
-    let tabData = [
-      {url: 'http://www.imeitou.com/uploads/allimg/2018041608/jwzx4afoxf5.jpg', name: '美国队长'},
-      {url: 'http://www.imeitou.com/uploads/allimg/2018041608/jwzx4afoxf5.jpg', name: '雷神'},
-      {url: 'http://www.imeitou.com/uploads/allimg/2018041608/jwzx4afoxf5.jpg', name: '钢铁侠'},
-      {url: 'http://www.imeitou.com/uploads/allimg/2018041608/jwzx4afoxf5.jpg', name: '绿巨人'},
-      {url: 'http://www.imeitou.com/uploads/allimg/2018041608/jwzx4afoxf5.jpg', name: '奇异博士'},
-      {url: 'http://www.imeitou.com/uploads/allimg/2018041608/jwzx4afoxf5.jpg', name: '奇异博士'},
-      {url: 'http://www.imeitou.com/uploads/allimg/2018041608/jwzx4afoxf5.jpg', name: '奇异博士'},
-      {url: 'http://www.imeitou.com/uploads/allimg/2018041608/jwzx4afoxf5.jpg', name: '奇异博士'},
-      {url: 'http://www.imeitou.com/uploads/allimg/2018041608/jwzx4afoxf5.jpg', name: '奇异博士'},
-      {url: 'http://www.imeitou.com/uploads/allimg/2018041608/jwzx4afoxf5.jpg', name: '奇异博士'},
-      {url: 'http://www.imeitou.com/uploads/allimg/2018041608/jwzx4afoxf5.jpg', name: '奇异博士'},
-      {url: 'http://www.imeitou.com/uploads/allimg/2018041608/jwzx4afoxf5.jpg', name: '奇异博士'},
-      {url: 'http://www.imeitou.com/uploads/allimg/2018041608/jwzx4afoxf5.jpg', name: '奇异博士'},
-      {url: 'http://www.imeitou.com/uploads/allimg/2018041608/jwzx4afoxf5.jpg', name: '奇异博士'},
-      {url: 'http://www.imeitou.com/uploads/allimg/2018041608/jwzx4afoxf5.jpg', name: '奇异博士'},
-      {url: 'http://www.imeitou.com/uploads/allimg/2018041608/jwzx4afoxf5.jpg', name: '奇异博士'},
-      {url: 'http://www.imeitou.com/uploads/allimg/2018041608/jwzx4afoxf5.jpg', name: '奇异博士'},
-    ]
+    let tabData = {
+      data : [
+        {url: 'http://www.imeitou.com/uploads/allimg/2018041608/jwzx4afoxf5.jpg', name: '美国队长'},
+        {url: 'http://www.imeitou.com/uploads/allimg/2018041608/jwzx4afoxf5.jpg', name: '雷神'},
+        {url: 'http://www.imeitou.com/uploads/allimg/2018041608/jwzx4afoxf5.jpg', name: '钢铁侠'},
+        {url: 'http://www.imeitou.com/uploads/allimg/2018041608/jwzx4afoxf5.jpg', name: '绿巨人'},
+        {url: 'http://www.imeitou.com/uploads/allimg/2018041608/jwzx4afoxf5.jpg', name: '奇异博士'},
+        {url: 'http://www.imeitou.com/uploads/allimg/2018041608/jwzx4afoxf5.jpg', name: '奇异博士'},
+        {url: 'http://www.imeitou.com/uploads/allimg/2018041608/jwzx4afoxf5.jpg', name: '奇异博士'},
+        {url: 'http://www.imeitou.com/uploads/allimg/2018041608/jwzx4afoxf5.jpg', name: '奇异博士'},
+        {url: 'http://www.imeitou.com/uploads/allimg/2018041608/jwzx4afoxf5.jpg', name: '奇异博士'},
+        {url: 'http://www.imeitou.com/uploads/allimg/2018041608/jwzx4afoxf5.jpg', name: '奇异博士'},
+        {url: 'http://www.imeitou.com/uploads/allimg/2018041608/jwzx4afoxf5.jpg', name: '奇异博士'},
+        {url: 'http://www.imeitou.com/uploads/allimg/2018041608/jwzx4afoxf5.jpg', name: '奇异博士'},
+        {url: 'http://www.imeitou.com/uploads/allimg/2018041608/jwzx4afoxf5.jpg', name: '奇异博士'},
+        {url: 'http://www.imeitou.com/uploads/allimg/2018041608/jwzx4afoxf5.jpg', name: '奇异博士'},
+        {url: 'http://www.imeitou.com/uploads/allimg/2018041608/jwzx4afoxf5.jpg', name: '奇异博士'},
+        {url: 'http://www.imeitou.com/uploads/allimg/2018041608/jwzx4afoxf5.jpg', name: '奇异博士'},
+        {url: 'http://www.imeitou.com/uploads/allimg/2018041608/jwzx4afoxf5.jpg', name: '奇异博士'}
+      ]
+  }
 
     let usersElements = [];
     let data = this.state.ajaxData;

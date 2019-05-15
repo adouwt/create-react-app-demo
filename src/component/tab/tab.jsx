@@ -13,11 +13,11 @@ class TabComponent extends Component {
   render() {
     const { tabStore } = this.props
     const tabElement = []
-    for (let i = 0; i < tabStore.length; i += 1) {
-      const { url, name } = tabStore[i]
+    for (let i = 0; i < tabStore.data.length; i += 1) {
+      const { url, name } = tabStore.data[i]
       /*eslint-disable*/
       tabElement.push(
-        <div className="single-tab">
+        <div className="single-tab" key={i}>
           <div className="img">
             <img src={url} alt="" />
           </div>
