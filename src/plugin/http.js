@@ -1,12 +1,13 @@
 /*eslint-disable*/
 import axios from 'axios'
 
-// let baseURL = process.env.NODE_ENV === 'production' ? 'http://vue.wtodd.wang:4000' : '/'
+let baseURL = process.env.NODE_ENV === 'production' ? 'http://vue.wtodd.wang:4000' : 'http://localhost:4000'
 /** eslint disabled */
 // 创建axios实例
 const request = axios.create({
-//   baseURL: process.env.VUE_APP_BASE_API, // api 的 base_url
-  baseURL: 'http://vue.wtodd.wang:4000', // api 的 base_url
+  baseURL: baseURL, // api 的 base_url
+  // baseURL: process.env.VUE_APP_BASE_API, // api 的 base_url
+  // baseURL: 'http://vue.wtodd.wang:4000', // api 的 base_url
   timeout: 20000 // 请求超时时间
 })
 // request拦截器

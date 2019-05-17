@@ -1,13 +1,13 @@
 /*eslint-disable*/
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
-import { PullToRefresh, ListView } from 'antd-mobile';
+import { PullToRefresh } from 'antd-mobile';
 import http from '../../plugin/http'
 import './pull.scss'
 const genAjaxData = (page) => {
   return new Promise((resolve, reject) => {
     http({
-      url: 'http://localhost:4000/post/getUsersFromPage',
+      url: '/post/getUsersFromPage',
       method: 'post',
       data: {
         page: page,
