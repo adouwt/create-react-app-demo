@@ -10,10 +10,10 @@ const genAjaxData = (page) => {
       url: 'http://localhost:4000/post/getUsersFromPage',
       method: 'post',
       data: {
-        page: page
+        page: page,
+        skip: false
       }
     }).then(res => {
-      console.log(res)
       resolve(res)
     })
   })
@@ -35,7 +35,6 @@ class pullRefresh extends Component {
   componentDidMount() {
     const hei = this.state.height - ReactDOM.findDOMNode(this.ptr).offsetTop;
     genAjaxData(this.state.pageSize).then(res => {
-      console.log(res)
       this.setState({
         height: hei,
         ajaxData: res.users,
